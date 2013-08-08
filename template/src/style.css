@@ -112,17 +112,38 @@ hr.line {
 }
 #home_bg_1 {
 	display:block;
-	background-image:url(home.png);
+	background-image:url(/t/src/home.png);
 }
 #home_bg_1:hover #home_bg_2 {
-	background-image:url(home_2.png);
+	background-image:url(/t/src/home_2.png);
+}
+#prev_bg_1 {
+	display:block;
+	background-image:url(/t/src/prev.png);
+}
+#prev_bg_1:hover #prev_bg_2 {
+	background-image:url(/t/src/prev_2.png);
+}
+#archive_bg_1 {
+	display:block;
+	background-image:url(/t/src/archive.png);
+}
+#archive_bg_1:hover #archive_bg_2 {
+	background-image:url(/t/src/archive_2.png);
+}
+#next_bg_1 {
+	display:block;
+	background-image:url(/t/src/next.png);
+}
+#next_bg_1:hover #next_bg_2 {
+	background-image:url(/t/src/next_2.png);
 }
 #addon_bg_1 {
 	display:block;
-	background-image:url(addon.png);
+	background-image:url(/t/src/addon.png);
 }
 #addon_bg_1:hover #addon_bg_2 {
-	background-image:url(addon_2.png);
+	background-image:url(/t/src/addon_2.png);
 }
 #addon {
 	display:none;

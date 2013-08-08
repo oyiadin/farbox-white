@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 <head>
-	<title>oYiaDin</title>
+	<title>{% block title %}{{ site.title }}{% endblock %}</title>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="src/style.css" />
+	<link rel="stylesheet" type="text/css" href="/t/src/style.css" />
 	<script type="text/javascript">
 	var had_event = false;
 	var if_addon = false;
@@ -30,23 +30,30 @@
 <body>
 <section id="container">
 	<section id="top">
-		<span id="blogtitle">网站标题</span>
-		<span id="blogdescription">网站描述（可选）</span>
+		<span id="blogtitle">{{ site.title }}</span>
+		{% if site.description %}<span id="blogdescription">{{ site.description }}</span>{% endif %}
 	</section>
 	<section id="nav">
 		<section id="avatar">
 			<section id="avatarleft">
 				<span id="home_bg_1">
-					<a id="home_bg_2" class="nostyle" href="#/" title="Back to Home">&nbsp;</a>
+					<a id="home_bg_2" class="nostyle" href="/" title="Back to Home">&nbsp;</a>
 				</span>
 			</section>
 			<section id="avatarcenter">
-				<a class="nostyle" href="https://twitter.com/oyiadin" title="Author@Twitter">
-					<img src="https://abs.twimg.com/a/1375759071/images/resources/twitter-bird-light-bgs.png" alt="Author@Twitter" />
-				</a><!--
-				--><a class="nostyle" href="https://github.com/oyiadin" title="Author@GitHub">
-					<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/29/GitHub_logo_2013.svg/140px-GitHub_logo_2013.svg.png" alt="Author@GitHub" />
-				</a>
+				{% if paginator.has_previous %}
+				<span id="prev_bg_1">
+					<a id="prev_bg_2" class="nostyle" href="{{ paginator.previous_page_url }}" title="Prev.">&nbsp;</a>
+				</span>
+				{% endif %}
+				<span id="archive_bg_1">
+					<a id-"archive_bg_2" class="nostyle" href="/archive" title="Archive.">&nbsp;</a>
+				</span>
+				{% if paginator.has_next %}
+				<span id="next_bg_1">
+					<a id="next_bg_2" class="nostyle" href="{{ paginator.next_page_url }}" title="Next.">&nbsp;</a>
+				</span>
+				{% endif %}
 			</section>
 			<section id="avatarright">
 				<span id="addon_bg_1" onclick="addon_handler();">
