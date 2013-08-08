@@ -42,6 +42,11 @@ hr.line {
 	padding:0;
 	border:none;
 }
+.info {
+	font-size:12px;
+	color:gray;
+	font-weight:bold;
+}
 #container {
 	max-width:760px;
 	width:90%;
@@ -49,7 +54,7 @@ hr.line {
 	margin:0 auto;
 	background-color:white;
 }
-#top, #nav, #content {
+#top, #nav {
 	padding:0 40px;
 }
 #top {
@@ -154,7 +159,14 @@ hr.line {
 	line-height:1.6em;
 	padding-top:15px;
 	padding-bottom:15px;
-	cursor:auto;
+}
+.post, .post_list {
+	padding-left:40px;
+	padding-right:40px;
+}
+.post_list:hover, .post_list:hover * {
+	color:white;
+	background-color:black;
 }
 #totop {
 	position:fixed;
