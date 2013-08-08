@@ -9,7 +9,6 @@
 	var if_addon = false;
 	function addon_handler(){
 		if(if_addon){
-
 			document.getElementById("addon").style.display ="none";
 			if_addon = false;
 		}else{
@@ -62,21 +61,19 @@
 		</section>
 	</section>
 	<section id="content">
-		<section class="post_list">
-			<h1 class="posttitle">
-				<a href="#post/xxx#article-xxx-content">文章</a>
-			</h1>
-			<section class="postmeta">
-				<span class="postdate info">2012-08-08</span>
-			</section>
-		</section>
-		<section class="post_list">
-			<h1 class="posttitle">
-				<a href="#">文章.</a>
-			</h1>
-			<section class="postmeta" id="xxx-meta">
-				<span class="postmeta info">2012-8-8</span>
-			</section>
+		<section class="post_lists">
+			<a href="#1" class="post_list nostyle">
+				<h1 class="posttitle">文章</h1>
+				<section class="postmeta">
+					<span class="postdate info">2012-08-08</span>
+				</section>
+			</a>
+			<a href="#2" class="post_list nostyle">
+				<h1 class="posttitle">文章2</h1>
+				<section class="postmeta" id="xxx-meta">
+					<span class="postmeta info">2012-8-8</span>
+				</section>
+			</a>
 		</section>
 		<section class="post" id="article-ipincai对极路由事件发表的重要讲话">
 			<section class="postmeta" id="article-ipincai对极路由事件发表的重要讲话-meta">
@@ -191,7 +188,10 @@
 			</section>
 		</section>
 	</section>
-	<section id="foot" style="font-size:16px;color:gray;text-align:right;">部分图片感谢Kindle Paperwhite.</section>
+	<section id="foot" style="text-align:center;">
+		<div class="info">部分图片复制至<a href="http://www.amazon.cn/gp/product/B007OZO03M/">Kindle Paperwhite。</a></div>
+		<div class="info">Theme by <a href="http://oyiadin.farbox.com">oYiaDin</a> | Powered by <a href="http://farbox.com">FarBox</a></div>
+	</section>
 </section>
 <section id="totop">
 	<a href="#top" title="Back to Top" class="nostyle">^</a>

@@ -12,6 +12,15 @@ body {
 	color:white;
 	background-color:black;
 }
+::-webkit-scrollbar {
+	background-color:white;
+	width:10px;
+	height:10px;
+	border-radius:40%;
+}
+::-webkit-scrollbar-thumb {
+	background-color:black;
+}
 a {
 	color:black;
 	text-decoration:none;
@@ -41,8 +50,9 @@ hr.line {
 	margin:0;
 	padding:0;
 	border:none;
+	line-height:1.6em;
 }
-.info {
+.info, .info *{
 	font-size:12px;
 	color:gray;
 	font-weight:bold;
@@ -54,7 +64,7 @@ hr.line {
 	margin:0 auto;
 	background-color:white;
 }
-#top, #nav {
+#top, #nav, #foot {
 	padding:0 40px;
 }
 #top {
@@ -145,8 +155,7 @@ hr.line {
 }
 #addon hr.line {
 	width:246px;
-	margin-left:20px;
-	margin-right:20px;
+	margin:1px 20px;
 }
 #avatarcenter {
 	width:500px;
@@ -163,10 +172,14 @@ hr.line {
 .post, .post_list {
 	padding-left:40px;
 	padding-right:40px;
+	display:block;
 }
 .post_list:hover, .post_list:hover * {
 	color:white;
 	background-color:black;
+}
+#foot {
+	padding-bottom:15px;
 }
 #totop {
 	position:fixed;
