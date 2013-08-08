@@ -131,6 +131,13 @@ hr.line {
 #archive_bg_1:hover #archive_bg_2 {
 	background-image:url(/t/src/archive_2.png);
 }
+#tags_bg_1 {
+	display:block;
+	background-image:url(/t/src/tags.png);
+}
+#tags_bg_1:hover #tags_bg_2 {
+	background-image:url(/t/src/tags_2.png);
+}
 #next_bg_1 {
 	display:block;
 	background-image:url(/t/src/next.png);

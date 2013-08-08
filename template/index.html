@@ -1,1 +1,136 @@
-pass
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="content">
+		<section class="post_lists">
+			<a href="#1" class="post_list nostyle">
+				<h1 class="posttitle">文章</h1>
+				<section class="postmeta">
+					<span class="postdate info">2012-08-08</span>
+				</section>
+			</a>
+			<a href="#2" class="post_list nostyle">
+				<h1 class="posttitle">文章2</h1>
+				<section class="postmeta" id="xxx-meta">
+					<span class="postmeta info">2012-8-8</span>
+				</section>
+			</a>
+		</section>
+		<section class="post" id="article-ipincai对极路由事件发表的重要讲话">
+			<section class="postmeta" id="article-ipincai对极路由事件发表的重要讲话-meta">
+				<h1 class="posttitle"><a href="#article-ipincai对极路由事件发表的重要讲话" class="getlink">ipincai对极路由事件发表的重要讲话</a></h1>
+				<span class="postdate">2013-08-06</span>
+			</section>
+			<section class="posthead" id="article-ipincai对极路由事件发表的重要讲话-content">
+				<ol>
+					<li><a href="http://hiwifi.com/">极路由</a>应该是一家刚刚起步的创业公司，本来步伐就不稳，被这样喷一下，影响可想而知。 </li>
+					<li>明显，极路由团队都是一堆IT宅，不懂公关，不过这种事情的确不应该让技术团队来回应。官方言辞略有过激了，这方面是极路由方面做的不够好，不过比较用心的项目被喷的这么惨，官方肯定不舒服。 </li>
+					<li>什么人在喷极路由？ </li>
+ 					<ul>
+ 						<li>不明白什么情况会出现Google提示账号异常。以为登录地点异常就是窃取信息。</li> 
+						<li>看着别人喷也就跟着喷了。大家都在喷，不喷不舒服。 </li>
+ 						<li>认为在天朝做这样的产品，肯定和Gov有关系。 </li>
+						<li>看极路由方面的言论不爽。 </li>
+ 						<li>认为这是一场危机公关。(我不认为一家刚刚起步的公司会这样玩火自焚。 </li>
+ 						<li><b><i><a href="https://zh.wikipedia.org/zh-cn/%E8%85%B9%E9%BB%91" title="维基百科：腹黑">腹黑。</a></i></b></li> 
+
+					</ul>
+					<li>还有一个帖子是说极路由屏蔽广告的，那我随便说下UC浏览器的广告屏蔽也是默认开启的。不反对广告，但希望广告可以精准投放，而且明白访问者是有忍耐限度的。 </li>
+				</ol>
+				<p><i>*欢迎指正</i></p>
+				<span><a href="http://pbb.whouz.com/topic/51ff343e0cc175257d8e34ce?p=2#reply30">原帖</a></span>
+			</section>
+		</section>
+		<section class="post" id="article-如何让搜索引擎抓取AJAX内容？">
+			<section class="postmeta" id="article-如何让搜索引擎抓取AJAX内容？-meta">
+				<h1 class="posttitle"><a href="#article-如何让搜索引擎抓取AJAX内容？" class="getlink">如何让搜索引擎抓取AJAX内容？</a></h1>
+				<span class="postdate">2013-07-16</span>
+			</section>
+			<section class="posthead" id="article-如何让搜索引擎抓取AJAX内容？-content">
+                                        <p>越来越多的网站，开始采用<a href="http://en.wikipedia.org/wiki/Single-page_application">"单页面结构"</a>（Single-page application）。</p>                                        <p>整个网站只有一张网页，采用<a href="http://zh.wikipedia.org/wiki/AJAX">Ajax</a>技术，根据用户的输入，加载不同的内容。</p>
+<p><img src="http://image.beekka.com/blog/201307/bg2013071603.jpg" /></p>
+<p>这种做法的好处是用户体验好、节省流量，缺点是AJAX内容无法被搜索引擎抓取。举例来说，你有一个网站。</p>
+<blockquote>
+<p>　　http://example.com</p>
+</blockquote>
+<p>用户通过<a href="http://www.ruanyifeng.com/blog/2011/03/url_hash.html">井号结构</a>的URL，看到不同的内容。</p>
+<blockquote>
+<p>　　http://example.com#1</p>
+<p>　　http://example.com#2</p>
+<p>　　http://example.com#3</p>
+</blockquote>
+<p>但是，搜索引擎只抓取example.com，不会理会井号，因此也就无法索引内容。</p>
+<p>为了解决这个问题，Google提出了"井号+感叹号"的结构。</p>
+<blockquote>
+<p>　　http://example.com#!1</p>
+</blockquote>
+<p>当Google发现上面这样的URL，就自动抓取另一个网址：</p>
+<blockquote>
+<p>　　http://example.com/?_escaped_fragment_=1</p>
+</blockquote>
+<p>只要你把AJAX内容放在这个网址，Google就会收录。但是问题是，"井号+感叹号"非常难看且烦琐。Twitter曾经采用这种结构，它把</p>
+<blockquote>
+<p>　　http://twitter.com/ruanyf</p>
+</blockquote>
+<p>改成</p>
+<blockquote>
+<p>　　http://twitter.com/#!/ruanyf</p>
+</blockquote>
+<p>结果用户抱怨连连，只用了半年就废除了。</p>
+<p>那么，有没有什么方法，可以在保持比较直观的URL的同时，还让搜索引擎能够抓取AJAX内容？</p>
+<p>我一直以为没有办法做到，直到前两天看到了<a href="http://www.discourse.org/">Discourse</a>创始人之一的<a href="http://eviltrout.com/2013/06/19/adding-support-for-search-engines-to-your-javascript-applications.html">Robin Ward</a>的解决方法，不禁拍案叫绝。</p>
+<p><img src="http://image.beekka.com/blog/201307/bg2013071602.png" /></p>
+<p>Discourse是一个论坛程序，严重依赖Ajax，但是又必须让Google收录内容。它的解决方法就是放弃井号结构，采用 <a href="http://html5doctor.com/history-api/">History API</a>。</p>
+<p>所谓 History API，指的是不刷新页面的情况下，改变浏览器地址栏显示的URL(准确说，是改变网页的当前状态)。这里有一个<a href="http://inserthtml.com/demo/history/">例子</a>，你点击上方的按钮，开始播放音乐。然后，再点击下面的链接，看看发生了什么事？</p>
+<p><a href="http://inserthtml.com/demo/history/"><img src="http://image.beekka.com/blog/201307/bg2013071601.png" /></a></p>
+<p>地址栏的URL变了，但是音乐播放没有中断！</p>
+<p>History API 的详细介绍，超出这篇文章的范围。这里只简单说，它的作用就是在浏览器的History对象中，添加一条记录。</p>
+<blockquote>
+<p>　　window.history.pushState(state object, title, url);</p>
+</blockquote>
+<p>上面这行命令，可以让地址栏出现新的URL。History对象的pushState方法接受三个参数，新的URL就是第三个参数，前两个参数都可以是null。</p>
+<blockquote>
+<p>　　window.history.pushState(null, null, newURL); </p>
+</blockquote>
+<p>目前，各大浏览器都支持这个方法：Chrome（26.0+），Firefox（20.0+），IE（10.0+），Safari（5.1+），Opera（12.1+）。</p>
+<p>下面就是Robin Ward的方法。</p>
+<p><strong>首先，用History API替代井号结构，让每个井号都变成正常路径的URL，这样搜索引擎就会抓取每一个网页。</strong></p>
+<blockquote>
+<p>　　example.com/1</p>
+<p>　　example.com/2</p>
+<p>　　example.com/3</p>
+</blockquote>
+<p><strong>然后，定义一个JavaScript函数，处理Ajax部分，根据网址抓取内容（假定使用jQuery）。</strong></p>
+<blockquote>
+<p>　　function anchorClick(link) {<br />　　　　var linkSplit = link.split('/').pop();<br />　　　　$.get('api/' + linkSplit, function(data) {<br />　　　　　　$('#content').html(data);<br />　　　　});<br />　　}</p>
+</blockquote>
+<p>再定义鼠标的click事件。</p>
+<blockquote>
+<p>　　$('#container').on('click', 'a', function(e) {<br />　　　　window.history.pushState(null, null, $(this).attr('href'));<br />　　　　anchorClick($(this).attr('href'));<br />　　　　e.preventDefault();<br />　　});</p>
+</blockquote>
+<p>还要考虑到用户点击浏览器的"前进 / 后退"按钮。这时会触发History对象的popstate事件。</p>
+<blockquote>
+<p>　　window.addEventListener('popstate', function(e) {     <br />　　　　anchorClick(location.pathname); 	<br /> 　　});</p>
+</blockquote>
+<p>定义完上面三段代码，就能在不刷新页面的情况下，显示正常路径URL和AJAX内容。</p>
+<p><strong>最后，设置服务器端。</strong></p>
+<p>因为不使用井号结构，每个URL都是一个不同的请求。所以，要求服务器端对所有这些请求，都返回如下结构的网页，防止出现404错误。</p>
+<blockquote>
+<p>　　&lt;html&gt;<br />　　　　&lt;body&gt;<br />　　　　　　&lt;section id='container'&gt;&lt;/section&gt;<br />　　　　　　&lt;noscript&gt;<br />　　　　　　　　... ...<br /> 　　　　　　&lt;/noscript&gt;<br />　　　　&lt;/body&gt;<br />　　&lt;/html&gt;</p>
+</blockquote>
+<p>仔细看上面这段代码，你会发现有一个noscript标签，这就是奥妙所在。</p>
+<p>我们把所有要让搜索引擎收录的内容，都放在noscript标签之中。这样的话，用户依然可以执行AJAX操作，不用刷新页面，但是搜索引擎会收录每个网页的主要内容！</p>
+<p>===================================</p>
+<p>[通知]</p>
+<p>接下来三周，我外出旅行，暂停更新网志。</p>
+<p>大家可以从 <a href="http://www.ruanyifeng.com/tweets/">http://www.ruanyifeng.com/tweets/</a>，了解我的行程。欢迎关注。</p>
+<p>（完）<br /></p>
+<span><a href="http://www.ruanyifeng.com/blog/2013/07/how_to_make_search_engines_find_ajax_content.html">原文</a></span>
+			</section>
+		</section>
+	</section>
+	<section id="foot" style="text-align:center;">
+		<div class="info">部分图片复制至<a href="http://www.amazon.cn/gp/product/B007OZO03M/">Kindle Paperwhite。</a></div>
+		<div class="info">Theme by <a href="http://oyiadin.farbox.com">oYiaDin</a> | Powered by <a href="http://farbox.com">FarBox</a></div>
+	</section>
+{% endblock %}
