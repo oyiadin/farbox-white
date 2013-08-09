@@ -3,12 +3,12 @@
 {% block content %}
 <section id="content">
 	<section class="post_lists">
-		{% for post in get_posts(limit=5) %}
+		{% for post in get_posts(limit=3) %}
 		<a href="{{ post.url }}#content" class="post_list nostyle">
 			<h1 class="posttitle">{{ post.title }}</h1>
 			<section class="postmeta">
 				<span class="postdate info">2012-08-08</span>
-				<span class="info">{{ post.raw_content | limit(20) }}</span>
+				<span class="info">{{ post.raw_content | limit(30) }}</span>
 			</section>
 		</a>
 		{% endfor %}
