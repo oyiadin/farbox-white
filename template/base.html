@@ -44,19 +44,19 @@
 				{% if paginator.has_previous %}
 				<span id="prev_bg_1">
 					<a id="prev_bg_2" class="nostyle" href="{{ paginator.previous_page_url }}" title="Prev.">&nbsp;</a>
-				</span>
+				</span><!--
 				{% endif %}
-				<span id="archive_bg_1">
-					<a id-"archive_bg_2" class="nostyle" href="/archive" title="Archive.">&nbsp;</a>
-				</span>
-				<span id="tags_bg_1">
-					<a id-"tags_bg_2" class="nostyle" href="/archive?use=tags" title="Tags.">&nbsp;</a>
-				</span>
+				<!----><span id="archive_bg_1">
+					<a id="archive_bg_2" class="nostyle" href="/archive" title="Archive.">&nbsp;</a>
+				</span><!--
+				--><span id="tags_bg_1">
+					<a id="tags_bg_2" class="nostyle" href="/archive?use=tags" title="Tags.">&nbsp;</a>
+				</span><!--
 				{% if paginator.has_next %}
-				<span id="next_bg_1">
+				--><span id="next_bg_1">
 					<a id="next_bg_2" class="nostyle" href="{{ paginator.next_page_url }}" title="Next.">&nbsp;</a>
 				</span>
-				{% endif %}
+				{% endif %}<!---->
 			</section>
 			<section id="avatarright">
 				<span id="addon_bg_1" onclick="addon_handler();">
@@ -73,6 +73,10 @@
 		</section>
 	</section>
 	{% block content %}{% endblock %}
+	<section id="foot" style="text-align:center;">
+		<div class="info">部分图片复制至<a href="http://www.amazon.cn/gp/product/B007OZO03M/">Kindle Paperwhite。</a></div>
+		<div class="info">Theme by <a href="http://oyiadin.farbox.com">oYiaDin</a> | Powered by <a href="http://farbox.com">FarBox</a></div>
+	</section>
 </section>
 <section id="totop">
 	<a href="#top" title="Back to Top" class="nostyle">^</a>

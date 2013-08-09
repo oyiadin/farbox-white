@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} | {{site.title }}{% endblock %}
+
+{% block content %}
+<section class="post" id="article">
+	<section class="postmeta" id="meta">
+		<h1 class="posttitle">{{ post.title }}</h1>
+		<span class="postdate info">2013-08-06</span>
+	</section>
+	<section class="posthead" id="content">
+		{{ post.content }}
+	</section>
+</section>
+{% endblock %}

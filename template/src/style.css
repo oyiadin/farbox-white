@@ -111,42 +111,42 @@ hr.line {
 	text-align:right;
 }
 #home_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/home.png);
 }
 #home_bg_1:hover #home_bg_2 {
 	background-image:url(/t/src/home_2.png);
 }
 #prev_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/prev.png);
 }
 #prev_bg_1:hover #prev_bg_2 {
 	background-image:url(/t/src/prev_2.png);
 }
 #archive_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/archive.png);
 }
 #archive_bg_1:hover #archive_bg_2 {
 	background-image:url(/t/src/archive_2.png);
 }
 #tags_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/tags.png);
 }
 #tags_bg_1:hover #tags_bg_2 {
 	background-image:url(/t/src/tags_2.png);
 }
 #next_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/next.png);
 }
 #next_bg_1:hover #next_bg_2 {
 	background-image:url(/t/src/next_2.png);
 }
 #addon_bg_1 {
-	display:block;
+	display:inline-block;
 	background-image:url(/t/src/addon.png);
 }
 #addon_bg_1:hover #addon_bg_2 {
@@ -192,10 +192,19 @@ hr.line {
 	text-align:center;
 	float:left;
 }
+#avatarcenter > span {
+	margin-right:30px;
+}
+#avatarcenter > span:last-child {
+	margin-right:0;
+}
 #content {
 	line-height:1.6em;
 	padding-top:15px;
 	padding-bottom:15px;
+}
+#content * {
+	word-break:break-word;
 }
 .post, .post_list {
 	padding-left:40px;
