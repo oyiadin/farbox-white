@@ -1,28 +1,54 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 	<title>{% block title %}{{ site.title }}{% endblock %}</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="/t/src/style.css" />
+	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script> 
 	<script type="text/javascript">
 	var had_event = false;
 	var if_addon = false;
+	var style_1;
+	var style_2;
+	$(document).ready(function(){
+		$(window).resize(function(){
+			if($(window).width() < 760){
+				style_1 = "none";
+				style_2 = "block";
+				if($("#navpull").css("display") == "block"){
+					$("#nav").css("height", "30px").addClass("nav");
+				}else{
+					$("#nav").css("height", "88px").addClass("nav");
+				}
+			}else{
+				style_1 = "block";
+				style_2 = "none";
+				$("#nav").css("height", "88px").removeClass("nav");
+			}
+			$("#navleft,#navcenter,#navright").each(function(){
+				this.style.display = style_1;
+			});
+			$("#navpull").css("display", style_2);
+		});
+	});
 	function addon_handler(){
-		if(if_addon){
-			document.getElementById("addon").style.display ="none";
-			if_addon = false;
-		}else{
-			had_event = true;
-			document.getElementById("addon").style.display = "block";
-			if_addon = true;
-		}
+		had_event = true;
+		$("#addon").toggle();
+	}
+	function navpull_handler(){
+		had_venet = true;
+		$("#navpull").toggle();
+		$("#nav").css("height", "88px");
+		$("#navleft,#navcenter,#navright").each(function(){
+			$(this).toggle();
+		});
 	}
 	window.onclick = function(){
 		if(had_event){
 			had_event = false;
 		}else{
-			if_addon = true;
-			addon_handler();
+			$("#addon").hide();
+			$("#navpull").hide();
 		}
 	}
 	</script>
@@ -31,19 +57,21 @@
 <section id="container">
 	<section id="top">
 		<span id="blogtitle">{{ site.title }}</span>
-		{% if site.description %}<span id="blogdescription">{{ site.description }}</span>{% endif %}
+		<span id="blogdescription">{{ site.description }}</span>
 	</section>
 	<section id="nav">
-		<section id="avatar">
-			<section id="avatarleft">
-				<span id="home_bg_1">
-					<a id="home_bg_2" class="nostyle" href="/" title="Back to Home">&nbsp;</a>
-				</span>
-			</section>
-			<section id="avatarcenter">
-				{% if paginator.has_previous %}
+		<section id="navleft">
+			<span id="home_bg_1">
+				<a id="home_bg_2" class="nostyle" href="/" title="Back to Home">&nbsp;</a>
+			</span>
+		</section>
+		<section id="navcenter">
+				<!--
+				{% set paginator = get_data(type='post', limit=3, page
+				-->
+				{% if _paginator.has_previous %}
 				<span id="prev_bg_1">
-					<a id="prev_bg_2" class="nostyle" href="{{ paginator.previous_page_url }}" title="Prev.">&nbsp;</a>
+					<a id="prev_bg_2" class="nostyle" href="{{ _paginator.previous_page_url }}" title="Prev.">&nbsp;</a>
 				</span><!--
 				{% endif %}
 				<!----><span id="archive_bg_1">
@@ -52,30 +80,30 @@
 				--><span id="tags_bg_1">
 					<a id="tags_bg_2" class="nostyle" href="/archive?use=tags" title="Tags.">&nbsp;</a>
 				</span><!--
-				{% if paginator.has_next %}
+				{% if _paginator.has_next %}
 				--><span id="next_bg_1">
-					<a id="next_bg_2" class="nostyle" href="{{ paginator.next_page_url }}" title="Next.">&nbsp;</a>
+					<a id="next_bg_2" class="nostyle" href="{{ _paginator.next_page_url }}" title="Next.">&nbsp;</a>
 				</span>
 				{% endif %}<!---->
-			</section>
-			<section id="avatarright">
-				<span id="addon_bg_1" onclick="addon_handler();">
-					<a id="addon_bg_2" class="nostyle" href="#" title="Add-on.">&nbsp;</a>
-				</span>
-				<div id="addon">
-					<a href="/archive" class="nostyle">归档</a>
-					<hr class="line" />
-					<a href="/archive?use=tags" class="nostyle">标签云</a>
-					<hr class="line" />
-					<a href="/post/about" class="nostyle">关于</a>
-				</div>
-			</section>
 		</section>
+		<section id="navright">
+			<span id="addon_bg_1" onclick="addon_handler();">
+				<a id="addon_bg_2" class="nostyle" href="#" title="Add-on.">&nbsp;</a>
+			</span>
+			<div id="addon">
+				<a href="/archive" class="nostyle">归档</a>
+				<hr class="line" />
+				<a href="/archive?use=tags" class="nostyle">标签云</a>
+				<hr class="line" />
+				<a href="/post/about" class="nostyle">关于</a>
+			</div>
+		</section>
+		<section id="navpull" onclick="navpull_handler();">v</section>
 	</section>
 	{% block content %}{% endblock %}
 	<section id="foot" style="text-align:center;">
 		<div class="info">部分图片复制至<a href="http://www.amazon.cn/gp/product/B007OZO03M/">Kindle Paperwhite。</a></div>
-		<div class="info">Theme by <a href="http://oyiadin.farbox.com">oYiaDin</a> | Powered by <a href="http://farbox.com">FarBox</a></div>
+		<div class="info">Theme by <a href="http://oyiadin.farbox.com/post/a-farbox-theme">oYiaDin</a> | Powered by <a href="http://farbox.com">FarBox</a> | <a href="/template">Clone Template</a></div>
 	</section>
 </section>
 <section id="totop">
