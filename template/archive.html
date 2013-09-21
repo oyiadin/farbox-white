@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Archive | {{ site.title }}
+{% endblock %}
+
+{% block content %}
+<section id="content">
+	<section class="post_lists">
+		<ul>
+			{% for post in posts %}
+			<li>
+				<a href="{{ post.url }}#meta" class="post_list" style="display:block;">
+					<h1 class="posttitle">{{ post.title }}</h1>
+					<span class="info">{{ post.date }}</span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+</section>
+{% endblock %}
