@@ -8,7 +8,7 @@
 			<h1 class="posttitle">{{ post.title }}</h1>
 			<section class="postmeta">
 				<span class="postdate info">{{ post.date }}</span>
-				<span class="info">{{ post.raw_content | limit(30) }}</span>
+				<span class="info">{{ post.content | limit(30) }}</span>
 			</section>
 		</a>
 		{% endfor %}
