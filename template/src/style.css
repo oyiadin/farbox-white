@@ -47,7 +47,8 @@ h6 {font-size:1.18em;padding:0.1em 0;}
 blockquote, pre {
 	background-color:black;
 	color:white;
-	padding:16px 39%;
+	margin:16px 0;
+	padding:16px 3.95%;
 }
 code {
 	background-color:black;
