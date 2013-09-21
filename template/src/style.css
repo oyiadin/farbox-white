@@ -44,6 +44,16 @@ h3 {font-size:1.4em;padding:0.4em 0;}
 h4 {font-size:1.3em;padding:0.3em 0;}
 h5 {font-size:1.2em;padding:0.2em 0;}
 h6 {font-size:1.18em;padding:0.1em 0;}
+blockquote, pre {
+	background-color:black;
+	color:white;
+	padding:16px 39%;
+}
+code {
+	background-color:black;
+	box-radius:5px;
+	color:white;
+}
 hr.line {
 	height:1px;
 	background-color:black;
